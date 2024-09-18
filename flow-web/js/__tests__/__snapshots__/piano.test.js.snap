@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Piano public JS methods showPianoOffer() will add handlers to Piano SDK and expose correct show offer callback to be called once initialised 1`] = `
+[
+  [
+    "init",
+    [Function],
+  ],
+]
+`;
