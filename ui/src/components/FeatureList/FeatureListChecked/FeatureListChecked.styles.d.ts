@@ -1,0 +1,1 @@
+export declare const StyledFeatureList: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../FeatureList.types').default, never>> & string & Omit<import('react').FC<import('../FeatureList.types').default>, keyof import('react').Component<any, {}, any>>;
