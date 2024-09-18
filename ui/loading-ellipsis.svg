@@ -1,0 +1,6 @@
+<svg viewBox="0 0 48 10" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+	<title id="title">Loading...</title>
+	<circle cx="5" cy="5" r="5" role="presentation" />
+	<circle cx="24" cy="5" r="5" role="presentation" />
+	<circle cx="43" cy="5" r="5" role="presentation"/>
+</svg>
