@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`identify user - Permutive identifyingUsers should identify user via Piano id, Braze id, Chartbeat id and hashed email 1`] = `
+[
+  [
+    [
+      {
+        "id": "the-piano-id",
+        "priority": 0,
+        "tag": "piano_id",
+      },
+      {
+        "id": "boris@example.test",
+        "priority": 1,
+        "tag": "user_email",
+      },
+      {
+        "id": "boris@example.test",
+        "priority": 2,
+        "tag": "email_sha256",
+      },
+      {
+        "id": "the-chartbeat-id",
+        "priority": 4,
+        "tag": "chartbeat_id",
+      },
+      {
+        "id": "some-braze-id",
+        "priority": 3,
+        "tag": "braze_id",
+      },
+    ],
+  ],
+]
+`;

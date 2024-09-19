@@ -1,0 +1,1 @@
+{"version":3,"file":"MockText.d.ts","sourceRoot":"","sources":["../../../../src/mocks/MockText.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,EAAE,EAAE,MAAM,OAAO,CAAC;AAG3B,eAAO,MAAM,OAAO,6NAUnB,CAAC;AAEF,QAAA,MAAM,QAAQ,EAAE,EAAE,CAAC;IACjB,KAAK,CAAC,EAAE,SAAS,CAAC;IAClB,EAAE,CAAC,EAAE,MAAM,CAAC;CACb,CAAyD,CAAC;AAE3D,eAAe,QAAQ,CAAC"}

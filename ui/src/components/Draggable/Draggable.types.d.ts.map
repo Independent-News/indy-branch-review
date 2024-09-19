@@ -1,0 +1,1 @@
+{"version":3,"file":"Draggable.types.d.ts","sourceRoot":"","sources":["../../../../../src/components/Draggable/Draggable.types.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,aAAa;IAC5B,CAAC,EAAE,MAAM,CAAC;IACV,CAAC,EAAE,MAAM,CAAC;CACX;AACD,MAAM,WAAW,cAAc;IAC7B,QAAQ,EAAE,SAAS,CAAC;IACpB,eAAe,CAAC,EAAE,aAAa,CAAC;IAChC,MAAM,CAAC,EAAE,MAAM,CAAC;IAChB,SAAS,CAAC,EAAE,MAAM,CAAC;CACpB"}
