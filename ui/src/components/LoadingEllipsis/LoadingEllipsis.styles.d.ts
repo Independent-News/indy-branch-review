@@ -1,0 +1,2 @@
+export const StyledSVG: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<any, never>> & (string | (string & Omit<any, keyof import('react').Component<any, {}, any>>));
+//# sourceMappingURL=LoadingEllipsis.styles.d.ts.map
