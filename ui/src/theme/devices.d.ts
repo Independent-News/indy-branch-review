@@ -1,0 +1,2 @@
+export declare const mobile: string, maxMobile: string, onlyMobile: string, tablet: string, maxTablet: string, onlyTablet: string, laptop: string, maxLaptop: string, onlyLaptop: string, desktop: string, maxDesktop: string, onlyDesktop: string;
+//# sourceMappingURL=devices.d.ts.map
