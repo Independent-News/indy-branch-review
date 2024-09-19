@@ -1,0 +1,3 @@
+import { default as FeaturedNewsletterProps } from './FeaturedNewsletter.types';
+declare const BaseFeaturedNewsletter: ({ title, image, standfirst, frequency, author, onSampleClick, isSubscribed, isPremium, onSubscribe, onUnsubscribe, }: FeaturedNewsletterProps) => import("react/jsx-runtime").JSX.Element;
+export default BaseFeaturedNewsletter;
