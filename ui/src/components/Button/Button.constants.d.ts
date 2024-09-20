@@ -1,0 +1,13 @@
+export declare const BUTTON_AS_BUTTON = "button";
+export declare const BUTTON_AS_ANCHOR = "a";
+export declare const BUTTON_SIZE_SMALL = "small";
+export declare const BUTTON_SIZE_BASE = "base";
+export declare const BUTTON_SIZE_LARGE = "large";
+export declare const BUTTON_TYPE_BUTTON = "button";
+export declare const BUTTON_TYPE_SUBMIT = "submit";
+export declare const BUTTON_TYPE_RESET = "reset";
+export declare const BUTTON_VARIANT_PRIMARY = "primary";
+export declare const BUTTON_VARIANT_SECONDARY = "secondary";
+export declare const BUTTON_VARIANT_TERTIARY = "tertiary";
+export declare const BUTTON_VARIANT_PRIMARY_UNCAP = "primary-uncap";
+//# sourceMappingURL=Button.constants.d.ts.map

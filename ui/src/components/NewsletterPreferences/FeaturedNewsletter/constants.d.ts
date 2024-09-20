@@ -1,0 +1,13 @@
+export declare const TEST_ID_FEATURED_NEWSLETTER_TITLE = "featured-newsletter-title";
+export declare const TEST_ID_FEATURED_NEWSLETTER_STANDFIRST = "featured-newsletter-standfirst";
+export declare const TEST_ID_FEATURED_NEWSLETTER_SUBCONTAINER = "featured-newsletter-subcontainer";
+export declare const TEST_ID_FEATURED_NEWSLETTER_AUTHOR = "featured-newsletter-author";
+export declare const TEST_ID_FEATURED_NEWSLETTER_IMAGE = "featured-newsletter-image";
+export declare const TEST_ID_FEATURED_NEWSLETTER_SUBSCRIBE_BUTTON = "featured-newsletter-subscribe-button";
+export declare const TEST_ID_FEATURED_NEWSLETTER_UNSUBSCRIBE_BUTTON = "featured-newsletter-unsubscribe-button";
+export declare const TEST_ID_FEATURED_NEWSLETTER_PREMIUM_BADGE = "featured-newsletter-premium-badge";
+export declare const FEATURED_NEWSLETTER_PREMIUM_BADGE_COPY = "Exclusive for subscribers";
+export declare const FEATURED_NEWSLETTER_SIGN_UP_COPY = "Sign up";
+export declare const FEATURED_NEWSLETTER_REMOVE_COPY = "Remove";
+export declare const MAX_TITLE_LEN = 70;
+//# sourceMappingURL=constants.d.ts.map
