@@ -1,0 +1,10 @@
+declare const FeaturedNewsletterContainer: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+declare const FeaturedNewsletterImage: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components/dist/types').Substitute<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {
+    $image: string;
+}>> & string;
+declare const FeaturedNewsletterContentContainer: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+declare const FeaturedNewsletterTitleContainer: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+declare const FeaturedNewsletterTitle: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>, never>> & string;
+declare const FeaturedNewsletterStandfirst: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>, never>> & string;
+export { FeaturedNewsletterContainer, FeaturedNewsletterImage, FeaturedNewsletterContentContainer, FeaturedNewsletterTitleContainer, FeaturedNewsletterTitle, FeaturedNewsletterStandfirst, };
+//# sourceMappingURL=FeaturedNewsletter.styles.d.ts.map
