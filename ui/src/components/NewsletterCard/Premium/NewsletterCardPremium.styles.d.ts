@@ -1,0 +1,6 @@
+export declare const Wrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../Base/NewsletterCard.types').default, never>> & string & Omit<import('react').FC<import('../Base/NewsletterCard.types').default>, keyof import('react').Component<any, {}, any>>;
+export declare const StyledCapsule: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<Omit<import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, never>, "ref"> & {
+    ref?: ((instance: HTMLSpanElement | null) => void | import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES[keyof import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES]) | import('react').RefObject<HTMLSpanElement> | null | undefined;
+}, never>> & string;
+export declare const StyledPremiumBadge: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../../PremiumBadge/PremiumBadge.types').default, never>> & string & Omit<import('react').FC<import('../../PremiumBadge/PremiumBadge.types').default>, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=NewsletterCardPremium.styles.d.ts.map
