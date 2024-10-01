@@ -1,0 +1,2 @@
+export declare const StyledMediaPlusPaddedCaption: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../MediaPlusCaption/MediaPlusCaption.types').MediaPlusCaptionProps, never>> & string & Omit<import('react').FC<import('../MediaPlusCaption/MediaPlusCaption.types').MediaPlusCaptionProps>, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=LiveBlogHero.styles.d.ts.map
