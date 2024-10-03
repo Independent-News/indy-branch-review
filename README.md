@@ -1,0 +1,11 @@
+# Image snapshot diff files for [ECOM-1154/feat/update-eon](git@github.com:brightsitesconsulting/independent-web/pull/8885)
+
+## Updated snapshots
+- other-affiliate-widget--eon-widget ([Diff](./other-affiliate-widget--eon-widget-768x1024-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--eon-widget))
+- other-affiliate-widget--eon-widget ([Diff](./other-affiliate-widget--eon-widget-425x700-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--eon-widget))
+- other-affiliate-widget--eon-widget ([Diff](./other-affiliate-widget--eon-widget-1600x900-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--eon-widget))
+- other-affiliate-widget--eon-widget ([Diff](./other-affiliate-widget--eon-widget-1024x768-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--eon-widget))
+- other-affiliate-widget--amazon-music-widget ([Diff](./other-affiliate-widget--amazon-music-widget-768x1024-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--amazon-music-widget))
+- other-affiliate-widget--amazon-music-widget ([Diff](./other-affiliate-widget--amazon-music-widget-425x700-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--amazon-music-widget))
+- other-affiliate-widget--amazon-music-widget ([Diff](./other-affiliate-widget--amazon-music-widget-1600x900-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--amazon-music-widget))
+- other-affiliate-widget--amazon-music-widget ([Diff](./other-affiliate-widget--amazon-music-widget-1024x768-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8885-sb/index.html?path=/story/other-affiliate-widget--amazon-music-widget))
