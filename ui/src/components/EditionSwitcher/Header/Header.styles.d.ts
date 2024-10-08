@@ -1,0 +1,3 @@
+export declare const HeaderTrigger: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../EditionSwitcher.types').TriggerProps, never>> & string & Omit<import('react').FC<import('../EditionSwitcher.types').TriggerProps>, keyof import('react').Component<any, {}, any>>;
+export declare const DropdownContent: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+//# sourceMappingURL=Header.styles.d.ts.map
