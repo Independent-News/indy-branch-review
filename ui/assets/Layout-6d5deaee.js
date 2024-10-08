@@ -1,0 +1,1 @@
+var p=Object.defineProperty;var t=(o,r)=>p(o,"name",{value:r,configurable:!0});import{j as e}from"./jsx-runtime-1a1b98e7.js";import{L as s}from"./Layout.styles-327f49b3.js";const a=t(({children:o,...r})=>e.jsx(s,{...r,children:o}),"Layout");try{a.displayName="Layout",a.__docgenInfo={description:"",displayName:"Layout",props:{}}}catch{}export{a as L};

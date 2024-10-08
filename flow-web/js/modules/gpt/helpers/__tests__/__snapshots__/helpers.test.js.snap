@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gpt/helpers.js createAd creates an ad element 1`] = `
+<div
+  class="extraAd"
+  data-ad-unit-path="/some/ad/unit/path"
+  data-mpu="true"
+  data-size="100x100"
+  id="AD_ID"
+/>
+`;
+
+exports[`gpt/helpers.js findMPUsForRefeshCheck(elem) will find all MPUs that require a refresh check 1`] = `
+NodeList [
+  <div
+    data-mpu=""
+    data-refresh-check="true"
+    id="mpu1"
+  />,
+  <div
+    data-mpu=""
+    data-refresh-check="true"
+    id="mpu4"
+  />,
+  <div
+    data-mpu=""
+    data-refresh-check="true"
+    id="mpu6"
+  />,
+]
+`;
+
+exports[`gpt/helpers.js findUninitialisedMPUs(elem) can find uninitialised MPUs 1`] = `
+NodeList [
+  <div
+    data-mpu=""
+    id="mpu1"
+  />,
+  <div
+    data-mpu=""
+    id="mpu3"
+  />,
+  <div
+    data-initialised="false"
+    data-mpu=""
+    id="mpu4"
+  />,
+  <div
+    data-mpu=""
+    id="mpu5"
+  />,
+  <div
+    data-mpu=""
+    id="mpu6"
+  />,
+]
+`;
+
+exports[`gpt/helpers.js findUninitialisedVisibleMPUs(elem) can find uninitialised visible MPUs 1`] = `
+[
+  <div
+    id="mpu2"
+  />,
+  <div
+    id="mpu4"
+  />,
+  <div
+    id="mpu5"
+  />,
+]
+`;
