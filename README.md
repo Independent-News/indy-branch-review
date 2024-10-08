@@ -1,0 +1,7 @@
+# Image snapshot diff files for [PREM-2394/feat/support-now-component-redesign](git@github.com:brightsitesconsulting/independent-web/pull/8903)
+
+## Updated snapshots
+- article-content--default-article-with-support-nsc ([Diff](./article-content--default-article-with-support-nsc-768x1024-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8903-sb/index.html?path=/story/article-content--default-article-with-support-nsc))
+- article-content--default-article-with-support-nsc ([Diff](./article-content--default-article-with-support-nsc-425x700-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8903-sb/index.html?path=/story/article-content--default-article-with-support-nsc))
+- article-content--default-article-with-support-nsc ([Diff](./article-content--default-article-with-support-nsc-1600x900-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8903-sb/index.html?path=/story/article-content--default-article-with-support-nsc))
+- article-content--default-article-with-support-nsc ([Diff](./article-content--default-article-with-support-nsc-1024x768-diff.png) | [Story](https://raw.githack.com/Independent-Digital-News-and-Media-Ltd/indy-branch-review/PR-8903-sb/index.html?path=/story/article-content--default-article-with-support-nsc))
