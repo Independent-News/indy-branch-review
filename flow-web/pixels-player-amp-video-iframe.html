@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script
+      async
+      src="https://cdn.ampproject.org/video-iframe-integration-v0.js"
+    ></script>
+    <!-- start Permutive -->
+    <!-- prettier-ignore -->
+    <script>!function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"5d79bce7-5d2b-427e-a6c4-b89b6c7bf048","ed467bcf-98ee-4ed9-894e-c49be4ab97e7",{});</script>
+    <script
+      async
+      src="https://cdn.permutive.com/5d79bce7-5d2b-427e-a6c4-b89b6c7bf048-web.js"
+    ></script>
+    <!-- end Permutive -->
+    <style type="text/css">
+      /* jw player regular skin */
+      .jwplayer.jw-skin-independent-regular .jw-display-icon-container {
+        background-color: rgba(236, 26, 46, 0.8);
+        border-radius: 50%;
+        padding: 1em;
+      }
+      .jwplayer.jw-skin-independent-regular .jw-button-color {
+        color: #fff;
+      }
+      .jwplayer.jw-skin-independent-regular .jw-display-icon-container:hover {
+        opacity: 0.85;
+      }
+      #pixelsPlayer {
+        background-color: black;
+      }
+      </style>
+      <script src="../_build/instream-video-prebid.js"></script>
+  </head>
+  <body style="margin: 0">
+    <div id="pixelsPlayer"></div>
+    <script type="text/JavaScript">
+      //** Global VARS
+      const now = new Date();
+      const UK = 'uk';
+      let quartilesElapsed = [];
+      let index, videoObject, current_mediaid, title, tags, description, posterImage, duration, updated_at, pub_date,
+        firstQuartile, adTag, originalAdTag, playSessionId, gdprConsent='', addtlConsent='', gdprApplies='';
+      let autoplay = false;
+      let isFirstPlay = true;
+      let adFirstQuartile;
+      let adQuartilesElapsed = [];
+      let adtitle;
+      let adclickthroughurl;
+      let adsystem;
+      let adtime = 0;
+      let adTimeFlag = true;
+      let adPos = 0;
+      let consentLoaded=false;
+      let permutiveLoaded=false;
+      tags = [];
+
+      const injectScriptTag = (domElm, src, async = false) => {
+        const scriptTag = document.createElement('script');
+
+        scriptTag.src = src;
+        scriptTag.async = async;
+
+        document.querySelector(domElm).appendChild(scriptTag);
+
+        return scriptTag;
+      };
+
+        const getCookie = (name, defaultValue = null) => {
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          return parts.length === 2
+            ? decodeURIComponent(parts.pop().split(';').shift())
+            : defaultValue;
+      };
+
+      const geoLocation = getCookie('subscriber_origin') ?? UK;
+
+      const prebidLibVersion = `/js/third-party/prebid${geoLocation === UK ? '' : '_non_uk' }.js`;
+      const apsLib = '/js/third-party/aps.js';
+
+      const pixelsScript = injectScriptTag('head', 'https://pub.pixels.ai/wrap-independent-no-prebid-lib.js');
+      const injectPrebidScript = injectScriptTag('body', prebidLibVersion, true);
+      const apsScript = injectScriptTag('body', apsLib, true);
+
+      const playerId = getUrlParameter('playerid');
+
+      pixelsScript.onload = function () {
+        pixels('pixelsPlayer').initPlayer(
+          playerId,
+          waitUntilPermutiveSegmentsReadyWithTimeout.bind(this, permutiveHasLoaded),
+        );
+      };
+
+      let timeoutAttemptCount = 0;
+      let permutiveSegments;
+      const timeoutStepMs = 500;
+      const timeoutMaxAttempts = 5;
+      waitUntilPermutiveSegmentsReadyWithTimeout = function(callback) {
+        permutiveSegments = localStorage._pdfps;
+        if(permutiveSegments || timeoutAttemptCount > timeoutMaxAttempts){
+          callback();
+        }else{
+          setTimeout(function () {
+            waitUntilPermutiveSegmentsReadyWithTimeout(callback);
+          }, timeoutStepMs);
+        }
+        timeoutAttemptCount++;
+      }
+
+      permutiveHasLoaded = function () {
+        permutiveLoaded=true;
+        if (consentLoaded) {
+          pixelsPlayerSetup();
+        }
+      }
+
+      pixelsPlayerSetup = function () {
+        const mediaId = getUrlParameter('mediaid');
+        const autoVideo = getUrlParameter('autovideo') === 'true' ? true : false;
+        pixels('pixelsPlayer').setup({
+          mediaId: mediaId,
+          skin: {
+            name: 'independent-regular',
+          },
+          setTimeEvents: true,
+          isSwapped: autoVideo,
+          pageOriginUrl: getUrlParameter('pageOriginUrl'),
+          jwplayerSiteId: 'g7SpqmnK',
+        });
+
+        pixels('pixelsPlayer').on('playlistItem', function () {
+          playSessionId = generatePermutiveUUID();
+          isFirstPlay = true; // This resets the counter for making an AdRequest when new content available
+          //Resetting video objects for new tracking
+          index = pixels('pixelsPlayer').getPlaylistIndex();
+          videoObject = pixels('pixelsPlayer').getPlaylistItem(index);
+          current_mediaid = videoObject.mediaid;
+          title = videoObject.title;
+          if ((videoObject.tags !== '') && (videoObject.tags !== undefined)) {
+            tags = videoObject.tags.split(',');
+          }
+          description = videoObject.description;
+          posterImage = videoObject.image;
+          duration = videoObject.duration;
+          updated_at = videoObject.updated_at;
+          pub_date = new Date(0); // The 0 there is the key, which sets the date to the epoch
+          pub_date.setUTCSeconds(videoObject.pubdate);
+          firstQuartile = Math.floor(duration / 4);
+          quartilesElapsed = [];
+          adQuartilesElapsed = [];
+        });
+
+        pixels("pixelsPlayer").initPlaylistPrebidCallback(async () => {
+          const customParams = getUrlParameter('customparams');
+          const adUnit = getUrlParameter('adunit');
+          const mediaid = getUrlParameter('mediaid');
+
+          const adUnitCode = adUnit.split('/').pop();
+          const prebidTag = await performApsAlongsidePrebid(mediaid, "pixelsPlayer", adUnitCode, adUnit, [640, 480]);
+
+          return addToTagAndIncrementAdPos(enrichTag(prebidTag, customParams, adUnit));
+        });
+
+        pixels('pixelsPlayer').on('ready', function () {
+          current_mediaid = pixels('pixelsPlayer').getMediaId();
+          autoplay = pixels('pixelsPlayer').getConfig().autostart;
+          pixels('pixelsPlayer').pause();
+          originalAdTag = pixels('pixelsPlayer').getAdTag();
+
+          const customParams = getUrlParameter('customparams');
+          const adUnit = getUrlParameter('adunit');
+
+          adTag = addToTagAndIncrementAdPos(enrichTag(originalAdTag, customParams, adUnit));
+          setAdTagBackOnPlayer(adTag);
+
+          if (autoplay) {
+            pixels('pixelsPlayer').play();
+          }
+
+          permutiveEventTracking('VideoLoad', {
+            'video': {
+              'duration': duration,
+              'name': title,
+              'custom_fields': [],
+              'video_id': current_mediaid,
+              'description': description,
+              'tags': tags,
+              'created_at': updated_at,
+              'published_at': pub_date
+            },
+            'play_id': playSessionId,
+            'auto_start': false
+          });
+        });
+
+
+        pixels('pixelsPlayer').on('beforePlay', function () {
+          if (isFirstPlay) {
+            pixels('pixelsPlayer').trigger('wt:adReq', {
+              adsRequest: { adTagUrl: adTag },
+            });
+            isFirstPlay = false;
+          }
+        });
+
+        //** Data tracking ***************************************************
+
+        pixels('pixelsPlayer').on('play', function () {
+          permutiveEventTracking('VideoPlay', {
+            'video': {
+              'duration': duration,
+              'name': title,
+              'custom_fields': [],
+              'video_id': current_mediaid,
+              'description': description,
+              'tags': tags,
+              'watch_count': 1,
+              'created_at': updated_at,
+              'published_at': pub_date
+            },
+            'play_id': playSessionId,
+            'auto_start': true
+          });
+        });
+
+        pixels('pixelsPlayer').on('pause', function () {
+          permutiveEventTracking('VideoEvent', {
+            'timestamp': now.getTime(),
+            'event': 'PressedPause',
+            'video': {
+              'duration': duration,
+              'name': title,
+              'custom_fields': [],
+              'video_id': current_mediaid,
+              'description': description,
+              'tags': tags,
+              'watch_count': 1,
+              'created_at': updated_at,
+              'published_at': pub_date
+            },
+            'play_id': playSessionId
+          });
+        });
+
+        pixels('pixelsPlayer').on('seek', function (timeObject) {
+          permutiveEventTracking('VideoProgress', {
+            'seeked': true,
+            'progress': timeObject.offset,
+            'video': {
+              'duration': duration,
+              'name': title,
+              'custom_fields': [],
+              'video_id': current_mediaid,
+              'description': description,
+              'tags': tags,
+              'watch_count': 1,
+              'created_at': updated_at,
+              'published_at': pub_date
+            },
+            'client': {
+              'url': window.location.href,
+              'type': 'web',
+              'domain': window.location.hostname,
+              'user_agent': navigator.userAgent
+            },
+            'play_id': playSessionId
+          });
+        });
+
+        pixels('pixelsPlayer').on('time', function (timeObject) {
+          if ((timeProgressMatch(timeObject.position, firstQuartile)) || (timeProgressMatch(timeObject.position, firstQuartile * 2)) || (timeProgressMatch(timeObject.position, firstQuartile * 3)) || (timeProgressMatch(timeObject.position, duration))) {
+            permutiveEventTracking('VideoProgress', {
+              'seeked': false,
+              'progress': timeObject.position,
+              'video': {
+                'duration': timeObject.duration,
+                'name': title,
+                'custom_fields': [],
+                'video_id': current_mediaid,
+                'description': description,
+                'tags': tags,
+                'watch_count': 1,
+                'created_at': updated_at,
+                'published_at': pub_date
+              },
+              'client': {
+                'url': window.location.href,
+                'type': 'web',
+                'domain': window.location.hostname,
+                'user_agent': navigator.userAgent
+              },
+              'play_id': playSessionId
+            });
+          }
+          ;
+        });
+
+        pixels('pixelsPlayer').on('adImpression', function (adobject) {
+          adtitle = adobject.adtitle;
+          adclickthroughurl = adobject.clickThroughUrl;
+          adsystem = adobject.adsystem;
+        });
+
+        pixels('pixelsPlayer').on('adTime', function (adTimeObject) {
+          if ((adTimeFlag) && (adTimeObject.position > 0)) {
+            adtime = parseInt(adTimeObject.duration, 10);
+            adFirstQuartile = Math.floor(duration / 4);
+            adTimeFlag = false;
+          }
+          if ((adTimeProgressMatch(adTimeObject.position, adFirstQuartile)) || (adTimeProgressMatch(adTimeObject.position, adFirstQuartile * 2)) || (adTimeProgressMatch(adTimeObject.position, adFirstQuartile * 3)) || (adTimeProgressMatch(adTimeObject.position, adtime))) {
+            permutiveEventTracking('VideoAdProgress', {
+              'progress': adTimeObject.position,
+              'video': {
+                'duration': duration,
+                'name': title,
+                'custom_fields': [],
+                'video_id': current_mediaid,
+                'description': description,
+                'tags': tags,
+                'watch_count': 1,
+                'created_at': updated_at,
+                'published_at': pub_date
+              },
+              'ad': {
+                'duration': adtime,
+                'advertiser_name': '',
+                'ad_system': adsystem,
+                'description': '',
+                'universal_ad_id_registry': '',
+                'creative_id': '',
+                'ad_id': '',
+                'min_suggested_duration': 30,
+                'title': adtitle,
+                'universal_ad_id': '',
+                'deal_id': ''
+              },
+              'play_id': playSessionId
+            });
+          }
+          ;
+        });
+
+        pixels('pixelsPlayer').on('adPlay', function () {
+          permutiveEventTracking('VideoAdPlay', {
+            'ad': {
+              'duration': adtime,
+              'advertiser_name': '',
+              'ad_system': adsystem,
+              'description': 'ad',
+              'universal_ad_id_registry': '',
+              'creative_id': '',
+              'ad_id': '',
+              'min_suggested_duration': 30,
+              'title': adtitle,
+              'universal_ad_id': '',
+              'deal_id': ''
+            },
+            'video': {
+              'duration': duration,
+              'name': title,
+              'custom_fields': [],
+              'video_id': current_mediaid,
+              'description': description,
+              'tags': tags,
+              'watch_count': 1,
+              'created_at': updated_at,
+              'published_at': pub_date
+            },
+            'play_id': playSessionId
+          });
+        });
+
+        pixels('pixelsPlayer').on('adClick', function () {
+          permutiveEventTracking('VideoAdClick', {
+            'ad': {
+              'duration': adtime,
+              'advertiser_name': '',
+              'ad_system': adsystem,
+              'description': 'Ad',
+              'universal_ad_id_registry': '',
+              'creative_id': '',
+              'ad_id': '',
+              'min_suggested_duration': 30,
+              'title': adtitle,
+              'universal_ad_id': '',
+              'deal_id': ''
+            },
+            'video': {
+              'name': adtitle,
+              'custom_fields': [],
+              'video_id': current_mediaid,
+              'description': adclickthroughurl,
+              'tags': tags,
+              'watch_count': 1,
+              'created_at': updated_at,
+              'published_at': now
+            },
+            'client': {
+              'url': window.location.href,
+              'type': 'web',
+              'domain': window.location.hostname,
+              'user_agent': navigator.userAgent
+            },
+            'play_id': playSessionId
+          });
+        });
+
+        pixels('pixelsPlayer').on('adsManager', function (eventObject) {
+          const { adsManager, videoElement } = eventObject;
+          const anId = 931398;
+          const adUnit = getUrlParameter('adunit');
+          const width = this.getWidth();
+          const height = this.getHeight();
+
+          if (anId && window.googleImaVansAdapter) {
+            const iasConfig = {
+              anId,
+              campId: `${width}x${height}`, // This is dynamic based on player dimensions, but can be hard coded
+              chanId: adUnit,
+              placementId: 'Open Auction',
+              pubOrder: 'Video',
+              pubId: 'Direct',
+              pubCreative: 'Default Creative',
+            };
+            window.googleImaVansAdapter.init(
+              window.google,
+              adsManager,
+              videoElement,
+              iasConfig,
+            );
+          }
+        });
+      };
+
+      // Wait for API to initialize
+      (window.AmpVideoIframe = window.AmpVideoIframe || [])
+      .push(integration => {
+        try {
+          integration.getConsentData((consent) => addConsentToAdTag(consent));
+        } catch (error) {}
+        integration.postEvent('canplay');
+      });
+
+      function setAdTagBackOnPlayer(adTag){
+        pixels('pixelsPlayer').setAdTag(adTag);
+      }
+
+      function addConsentToAdTag(consent){
+        gdprConsent=consent?.consentString || '';
+        addtlConsent=consent?.consentMetadata?.additionalConsent || '';
+        gdprApplies=doesGdprApply(consent?.consentPolicyState);
+        consentLoaded=true;
+        if (permutiveLoaded) {
+          pixelsPlayerSetup();
+        }
+      }
+
+      function doesGdprApply(consentPolicyState) {
+        const SUFFICIENT=1;
+        const UNKNOWN_NOT_REQUIRED=3;
+        return consentPolicyState === UNKNOWN_NOT_REQUIRED ? '0' : consentPolicyState === SUFFICIENT ? '1' : '';
+      }
+
+      function enrichTag(adTag, customParams, adUnit) {
+        //permutive inclusion
+        const permutiveSegments = encodeURIComponent('permutive=' + encodeURIComponent(JSON.parse(localStorage._pdfps || '[]').slice(0, 250).join(',')));
+        if (customParams) {
+          customParams += '%26' + permutiveSegments;
+        } else {
+          customParams = permutiveSegments;
+        }
+
+        //placeholder for adPos
+        customParams += '%26adpos%3D0';
+
+        const tagUrl = new URL(adTag);
+        const urlParams = new URLSearchParams(tagUrl.search);
+        if (urlParams.has('cust_params')) {
+          if (urlParams.get('cust_params') !== '') {
+            customParams = '%26' + customParams;
+            adTag = adTag.replace(/(cust_params[^&]+)/, '$1' + customParams);
+          } else {
+            adTag = adTag.replace(/(cust_params[^&]+)/, '$1' + customParams);
+          }
+        } else {
+          adTag = adTag + '&cust_params=' + customParams;
+        }
+        if (!urlParams.has('ad_rule')) {
+          adTag = adTag + '&ad_rule=0'; // make sure tag contains 'ad_rule=0'
+        }
+        adTag = adTag
+          + '&gdpr=' + gdprApplies
+          + '&gdpr_consent=' + gdprConsent
+          + '&addtl_consent=' + addtlConsent;
+        if (adUnit) {
+          adTag = adTag.replace(/(iu=).*?(&)/,'$1' + adUnit + '$2',);
+        }
+        return adTag;
+      }
+
+      function addToTagAndIncrementAdPos(adTag) {
+        adTag = adTag.replace(/(adpos%3D).*?(&)/, '$1' + adPos + '$2');
+        adPos++;
+        return adTag;
+      }
+
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        const results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      // Helper function to evaluate if to track the time progress event to Permutive
+      function timeProgressMatch(progress, quartile) {
+        if (quartilesElapsed.includes(quartile))
+          return false;
+        else {
+          if (Math.floor(progress) == quartile) {
+            quartilesElapsed.push(quartile);
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+
+      // Helper function to evaluate if to track the time progress event to Permutive
+      function adTimeProgressMatch(progress, quartile) {
+        if (adQuartilesElapsed.includes(quartile))
+          return false;
+        else {
+          if (Math.floor(progress) == quartile) {
+            adQuartilesElapsed.push(quartile);
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+
+      //Helper function to generate a UUID to assign to the user
+      function generatePermutiveUUID() {
+        let d = new Date().getTime();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          const r = (d + Math.random() * 16) % 16 | 0;
+          d = Math.floor(d / 16);
+          return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+      }
+
+      function permutiveEventTracking(eventName, trackingPayload) {
+        window.permutive.track(eventName, trackingPayload);
+      }
+    </script>
+  </body>
+</html>
