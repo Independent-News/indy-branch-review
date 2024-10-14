@@ -1,0 +1,2 @@
+export declare const updateChildCardHeights: (wrapperRef: React.RefObject<HTMLDivElement>, childCardsRef: React.MutableRefObject<HTMLElement[]>) => void;
+//# sourceMappingURL=MultiStepCards.helpers.d.ts.map
