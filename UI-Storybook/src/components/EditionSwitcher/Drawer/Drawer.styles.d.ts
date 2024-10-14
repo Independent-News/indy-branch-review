@@ -1,0 +1,5 @@
+export declare const DrawerTrigger: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../EditionSwitcher.types').TriggerProps, never>> & string & Omit<({ className, label, subLabel }: import('../EditionSwitcher.types').TriggerProps) => import("react/jsx-runtime").JSX.Element, keyof import('react').Component<any, {}, any>>;
+export declare const DrawerLink: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<Omit<import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, never>, "ref"> & {
+    ref?: ((instance: HTMLAnchorElement | null) => void | import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES[keyof import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES]) | import('react').RefObject<HTMLAnchorElement> | null | undefined;
+}, never>> & string;
+//# sourceMappingURL=Drawer.styles.d.ts.map
