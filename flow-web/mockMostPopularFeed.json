@@ -1,0 +1,100 @@
+{
+    "articles": [
+        {
+            "id": "9676176",
+            "title": "Microsoft Internet Explorer is finally dead",
+            "link": "\/life-style\/gadgets-and-tech\/news\/microsoft-internet-explorer-out-of-use-11-edge-a9676176.html",
+            "image": "https:\/\/static.independent.co.uk\/s3fs-public\/thumbnails\/image\/2015\/03\/18\/18\/pg-14--internet-explorer-1.jpg",
+            "capsule": {
+                "title": "News",
+                "href": "\/life-style\/gadgets-and-tech\/news"
+            },
+            "type": "article",
+            "media": "video",
+            "liveblog": false,
+            "articleType": "article",
+            "isVoices": false,
+            "highLightBlack": false,
+            "position": 1,
+            "alias": "microsoft-internet-explorer-out-of-use-11-edge-a9676176.html",
+            "event": "event19"
+        },
+        {
+            "id": "9675611",
+            "title": "Chocolate snow falls on Swiss town after defect at Lindt factory",
+            "link": "\/news\/world\/europe\/chocolate-snow-lindt-factory-switzerland-ventilation-system-a9675611.html",
+            "image": "https:\/\/static.independent.co.uk\/s3fs-public\/thumbnails\/image\/2020\/08\/18\/12\/snow-alps.jpg",
+            "capsule": {
+                "title": "Europe",
+                "href": "\/news\/world\/europe"
+            },
+            "type": "article",
+            "media": "video",
+            "liveblog": false,
+            "articleType": "article",
+            "isVoices": false,
+            "highLightBlack": false,
+            "position": 2,
+            "alias": "chocolate-snow-lindt-factory-switzerland-ventilation-system-a9675611.html",
+            "event": "event19"
+        },
+        {
+            "id": "9674466",
+            "title": "Nature of Oumuamua object remains a mystery, scientists claim",
+            "link": "\/life-style\/gadgets-and-tech\/news\/oumuamua-interstellar-comet-asteroid-object-a9674466.html",
+            "image": "https:\/\/static.independent.co.uk\/s3fs-public\/thumbnails\/image\/2019\/12\/10\/12\/interstellar-comet-2.jpg",
+            "capsule": {
+                "title": "News",
+                "href": "\/life-style\/gadgets-and-tech\/news"
+            },
+            "type": "article",
+            "media": "video",
+            "liveblog": false,
+            "articleType": "article",
+            "isVoices": false,
+            "highLightBlack": false,
+            "position": 3,
+            "alias": "oumuamua-interstellar-comet-asteroid-object-a9674466.html",
+            "event": "event19"
+        },
+        {
+            "id": "9676301",
+            "title": "Rubio roasted after criticising DNC for choosing Eva Longoria as host",
+            "link": "\/news\/world\/americas\/us-politics\/marco-rubio-tweet-eva-longoria-host-dnc-joe-biden-a9676301.html",
+            "image": "https:\/\/static.independent.co.uk\/s3fs-public\/thumbnails\/image\/2016\/03\/16\/00\/marco-rubio-florida.jpg",
+            "capsule": {
+                "title": "US politics",
+                "href": "\/news\/world\/americas\/us-politics"
+            },
+            "type": "article",
+            "media": "video",
+            "liveblog": false,
+            "articleType": "article",
+            "isVoices": false,
+            "highLightBlack": false,
+            "position": 4,
+            "alias": "marco-rubio-tweet-eva-longoria-host-dnc-joe-biden-a9676301.html",
+            "event": "event19"
+        },
+        {
+            "id": "9675161",
+            "title": "When Bernie Sanders makes a speech like that, you know things are bad",
+            "link": "\/voices\/bernie-sanders-dnc-speech-convention-joe-biden-2020-election-trump-a9675161.html",
+            "image": "https:\/\/static.independent.co.uk\/s3fs-public\/thumbnails\/image\/2020\/08\/18\/03\/bernie-sanders-dnc-democratic-national-convention.jpg",
+            "capsule": {
+                "title": "Voices",
+                "href": "\/voices"
+            },
+            "type": "article",
+            "media": "video",
+            "liveblog": false,
+            "articleType": "article",
+            "isVoices": true,
+            "highLightBlack": false,
+            "classes": "article-voices",
+            "position": 5,
+            "alias": "bernie-sanders-dnc-speech-convention-joe-biden-2020-election-trump-a9675161.html",
+            "event": "event19"
+        }
+    ]
+}
