@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bookmark public JS modules deleteBookmark() will maintain saved class and console error on unsuccessful delete request 1`] = `
+"
+      <button class="bookmark-button saved" data-article-id="12345"></button>
+    "
+`;
+
+exports[`Bookmark public JS modules deleteBookmark() will make request to delete bookmark and update classes with local storage on successful request 1`] = `
+"
+      <button class="bookmark-button" data-article-id="12345"></button>
+    "
+`;
