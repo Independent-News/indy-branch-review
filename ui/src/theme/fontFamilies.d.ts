@@ -1,0 +1,13 @@
+export declare const primaryFont = "'Indy Serif', 'Indy Serif Fallback', serif";
+export declare const secondaryFont = "'Indy Sans', 'Indy Sans Fallback', sans-serif";
+export declare const secondaryFontCaps = "'Indy Sans CAPS', 'Indy Sans CAPS Fallback', sans-serif";
+export declare const editionMediumFont = "'Indy-Serif-Medium', serif";
+export declare const editionLightFont = "'Indy-Serif-Light', serif";
+export declare const editionLightItalicFont = "'Indy-Serif-Light-Italic', serif";
+export declare const editionRegularFont = "'Indy-Serif-Regular', serif";
+export declare const editionHairlineFont = "'Indy Hairline'";
+export declare const editionSansLightFont = "'Indy-Sans-Light', sans-serif";
+export declare const editionSansHeavyFont = "'Indy Sans Heavy', sans-serif";
+export declare const editionSansBoldFont = "'Indy-Sans-Bold', sans-serif";
+export declare const editionSerifBoldFont = "'Indy-Serif-Bold', serif";
+//# sourceMappingURL=fontFamilies.d.ts.map

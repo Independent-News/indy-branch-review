@@ -1,0 +1,8 @@
+export declare const StyledBookmarkModal: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../../Modal/PageSpecific/ModalPageSpecific.types').PageSpecificProps, never>> & string & Omit<({ children, isHidden, onEscapeKeyPress, ...rest }: import('../../Modal/PageSpecific/ModalPageSpecific.types').PageSpecificProps) => import("react/jsx-runtime").JSX.Element, keyof import('react').Component<any, {}, any>>;
+export declare const Container: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+export declare const CloseButton: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, never>> & string;
+export declare const CloseIcon: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../../Icon').IconProps, never>> & string & Omit<{
+    ({ svg, size, ...rest }: import('../../Icon').IconProps): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+}, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=BookmarkModal.styles.d.ts.map

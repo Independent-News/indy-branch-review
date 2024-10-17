@@ -1,0 +1,2 @@
+export const WithDetailsWrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../Base/SubscriptionPricingCard.types').default, never>> & string & Omit<({ children, badgeText, className, ...rest }: import('../Base/SubscriptionPricingCard.types').default) => import("react/jsx-runtime").JSX.Element, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=SubscriptionPricingCardWithDetails.styles.d.ts.map

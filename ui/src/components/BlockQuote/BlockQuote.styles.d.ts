@@ -1,0 +1,5 @@
+export declare const Wrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+export declare const QuotesSVG: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<any, never>> & (string | (string & Omit<any, keyof import('react').Component<any, {}, any>>));
+export declare const Quote: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+export declare const Cite: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+//# sourceMappingURL=BlockQuote.styles.d.ts.map
