@@ -1,0 +1,5 @@
+export declare const Wrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+export declare const Badge: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<Omit<import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, never>, "ref"> & {
+    ref?: ((instance: HTMLSpanElement | null) => void | import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES[keyof import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES]) | import('react').RefObject<HTMLSpanElement> | null | undefined;
+}, never>> & string;
+//# sourceMappingURL=SubscriptionPricingCard.styles.d.ts.map
