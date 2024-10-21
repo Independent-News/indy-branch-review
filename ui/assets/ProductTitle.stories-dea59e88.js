@@ -1,0 +1,3 @@
+import{P as s}from"./ProductTitle-8bcefff0.js";import"./jsx-runtime-1a1b98e7.js";import"./index-29d3bc65.js";import"./_commonjsHelpers-f86d8be3.js";import"./styled-components.browser.esm-852d80e5.js";import"./devices-1d39230d.js";import"./breakPoints-89c7d41a.js";const u={title:"Components/Product Title",component:s,argTypes:{title:{control:{disable:!0}}}},a={title:"This is a Product Title"},t={args:a};var r,e,o;t.parameters={...t.parameters,docs:{...(r=t.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: defaultArgs
+}`,...(o=(e=t.parameters)==null?void 0:e.docs)==null?void 0:o.source}}};const f=["Default"];export{t as Default,f as __namedExportsOrder,u as default};
