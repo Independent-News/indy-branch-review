@@ -1,0 +1,8 @@
+import { HTMLProps } from 'react';
+export declare const HorizontalRadioButtonGroup: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('styled-components').FastOmit<import('styled-components/dist/types').Substitute<import('react').DetailedHTMLProps<import('react').FieldsetHTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>, Omit<import('react').DetailedHTMLProps<import('react').FieldsetHTMLAttributes<HTMLFieldSetElement>, HTMLFieldSetElement>, "ref"> & {
+    ref?: ((instance: HTMLFieldSetElement | null) => void | import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES[keyof import('react').DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES]) | import('react').RefObject<HTMLFieldSetElement> | null | undefined;
+}>, never>, never>> & string;
+export declare const Label: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>, never>> & string;
+export declare const HiddenInput: React.FC<HTMLProps<HTMLInputElement>>;
+export declare const Wrapper: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+//# sourceMappingURL=RadioButton.styles.d.ts.map
