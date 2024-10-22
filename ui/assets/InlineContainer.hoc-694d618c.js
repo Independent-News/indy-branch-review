@@ -1,0 +1,15 @@
+var c=Object.defineProperty;var n=(e,t)=>c(e,"name",{value:t,configurable:!0});import{j as o}from"./jsx-runtime-1a1b98e7.js";import{d as s}from"./styled-components.browser.esm-852d80e5.js";import{I as l}from"./AnchorsNav.constants-3fd2a829.js";const p=n((e,t=!1)=>{const a=e.replace(/\n/g,"").trim();return t?`data:image/svg+xml;base64,${btoa(a)}`:`data:image/svg+xml,${encodeURIComponent(a).replace(/'/g,"%27").replace(/"/g,"%22")}`},"svgToDataUri"),h=`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="#222222" stroke-width="2">
+    <defs>
+      <circle id="f863477a" cx="10" cy="10" r="10" vector-effect="non-scaling-stroke" />
+      <clipPath id="clip-f863477a">
+        <use href="#f863477a" />
+      </clipPath>
+    </defs>
+    <use href="#f863477a" clip-path="url(#clip-f863477a)" />
+    <rect width="20" height="20" vector-effect="non-scaling-stroke" />
+  </svg>`,g=p(h,!0),d=s.div.withConfig({componentId:"sc-1e0vnug-0"})(["& >{p,ul > li,ol > li{",";&,& > span{> a{",";}}}ul,ol{> li{margin:0 0 ","px;}}ul,ol,p{margin:0 0 ","px;}h2,h3,h4,h5,h6{margin:0 0 ","px;}h2{",";}h3{",";}h4{",";}h5{",";}h6{",";}p .drop-cap{--color:",";--font-size:","px;--line-height:","px;--size:calc( var(--line-height) * 4 - (var(--line-height) - var(--font-size)) );display:flex;width:var(--size);height:var(--size);align-items:center;justify-content:center;margin:1px ","px 0 0;background:url(",") no-repeat;float:left;font:normal 58px/1 ",";text-transform:uppercase;}.anchor-nav-header{scroll-margin-top:","px;}.anchor-nav-header a{",";color:",";&:hover{color:",";}}}"],({theme:e})=>e.textStyle.p,({theme:e})=>e.textStyle.a,({theme:e})=>e.spacing.x1,({theme:e})=>e.dimension.paragraph.marginY,({theme:e})=>e.spacing.x0_5,({theme:e})=>e.textStyle.h2,({theme:e})=>e.textStyle.h3,({theme:e})=>e.textStyle.h4,({theme:e})=>e.textStyle.h5,({theme:e})=>e.textStyle.h6,({theme:e})=>e.color.ink.base,({theme:e})=>e.dimension.paragraph.fontSize,({theme:e})=>e.dimension.paragraph.lineHeight,({theme:e})=>e.spacing.x1_5,g,({theme:e})=>e.fontFamily.primaryFont,l-1,({theme:e})=>e.textStyle.h2,({theme:e})=>e.color.ink.base,({theme:e})=>e.color.ink.base),m=s.div.withConfig({componentId:"sc-1e0vnug-1"})(["margin-bottom:","px;"],({theme:e})=>e.dimension.paragraph.marginY),i=n(({children:e})=>o.jsx(d,{children:e}),"RichText"),w=i;try{i.displayName="RichText",i.__docgenInfo={description:`This component is used for styling and laying out long-form content such as
+that found in the body of an article or blog post.
+
+It is exported along with an InlineContainer component which can be used to
+wrap other components and ensure that they adhere to the flow of the document`,displayName:"RichText",props:{className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}}}}}catch{}function r(e){return n(function(a){return o.jsx(m,{children:o.jsx(e,{...a})})},"WrappedWithInlineContainer")}n(r,"withInlineContainer");try{r.displayName="withInlineContainer",r.__docgenInfo={description:"Wraps a given component in an InlineContainer for use in RichText content",displayName:"withInlineContainer",props:{}}}catch{}export{m as I,w as R};
