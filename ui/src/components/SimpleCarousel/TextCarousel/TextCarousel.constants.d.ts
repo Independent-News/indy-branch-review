@@ -1,0 +1,12 @@
+export declare const HEIGHT_MOBILE = 82;
+export declare const HEIGHT_TABLET = 60;
+export declare const CTA_WIDTH = 94;
+export declare const CTA_HEIGHT_MOBILE = 38;
+export declare const CONTROL_AREA_WIDTH = 88;
+export declare const TEXT_AREA_WIDTH_LAPTOP = 804;
+export declare const TEXT_AREA_WIDTH_DESKTOP = 1053;
+export declare const MARGIN_AREA_MOBILE = 8;
+export declare const MARGIN_AREA_TABLET = 12;
+export declare const CLASS_CAROUSEL_NEXT_BUTTON = "carousel-next-button";
+export declare const CLASS_CAROUSEL_PREV_BUTTON = "carousel-prev-button";
+//# sourceMappingURL=TextCarousel.constants.d.ts.map
