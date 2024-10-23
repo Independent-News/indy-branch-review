@@ -1,0 +1,2 @@
+export declare const OneColumnLayout: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../Layout.types').LayoutProps, never>> & string & Omit<({ children, ...rest }: import('../Layout.types').LayoutProps) => import("react/jsx-runtime").JSX.Element, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=OneColumn.styles.d.ts.map
