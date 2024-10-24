@@ -1,0 +1,2 @@
+export declare const StyledDropCap: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, never>> & string;
+//# sourceMappingURL=DropCap.styles.d.ts.map
