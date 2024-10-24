@@ -1,0 +1,1 @@
+import{d as o}from"./styled-components.browser.esm-852d80e5.js";const s=o.div.withConfig({componentId:"sc-1szr8mn-0"})(["box-sizing:border-box;"]),t=o.div.withConfig({componentId:"sc-1szr8mn-1"})(["display:flex;box-sizing:border-box;flex-direction:column;gap:","px;"],({theme:n})=>n.spacing.x4),r=o.div.withConfig({componentId:"sc-1szr8mn-2"})([""]);export{s as L,r as M,t as S};
