@@ -1,0 +1,2 @@
+export declare const StyledAuthorHighlight: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('./AuthorHighlight.types').AuthorHighlightProps, never>> & string & Omit<({ biography, authors, image, className, }: import('./AuthorHighlight.types').AuthorHighlightProps) => import("react/jsx-runtime").JSX.Element, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=Secondary.styles.d.ts.map
