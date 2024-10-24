@@ -1,0 +1,2 @@
+export declare const StyledMediaPlusCaptionForHero: import('styled-components/dist/types').IStyledComponentBase<"web", import('styled-components').FastOmit<import('../MediaPlusCaption/MediaPlusCaption.types').MediaPlusCaptionProps, never>> & string & Omit<({ caption, copyright, className, children, }: import('../MediaPlusCaption/MediaPlusCaption.types').MediaPlusCaptionProps) => import("react/jsx-runtime").JSX.Element, keyof import('react').Component<any, {}, any>>;
+//# sourceMappingURL=HeroVideo.styles.d.ts.map
